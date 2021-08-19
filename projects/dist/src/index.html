@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>Nethernite</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/fav/favicon.ico"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__back">
+        <a href="/" class="header__btn">
+          <img src="./img/arrow-back.png" class="img-btn" alt="" />
+          <span>back</span>
+        </a>
+      </div>
+      <div class="header__wallet">
+        <ul class="header__wallet-list">
+          <li class="header__wallet-item">
+            <img src="./img/coins.png" class="img-resources" alt="" />
+            <div class="header__amount">
+              <span class="amount">100254</span>
+              <span class="value">Coins</span>
+            </div>
+            <img src="./img/green-plus.png" class="img-plus" alt="" />
+          </li>
+          <li class="header__wallet-item">
+            <img src="./img/crystals.png" class="img-resources" alt="" />
+            <div class="header__amount">
+              <span class="amount">1254</span>
+              <span class="value">Crystals</span>
+            </div>
+            <img src="./img/green-plus.png" class="img-plus" alt="" />
+          </li>
+        </ul>
+      </div>
+      <div class="header__home">
+        <a href="/" class="header__btn">
+          <img src="./img/home.png" class="img-btn" alt="" />
+          <span>home</span>
+        </a>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main__tabs">
+        <button class="main__tabslinks" onclick="opentab(event, 'Monster')">Монстр Боксы</button>
+		<button class="main__tabslinks" onclick="opentab(event, 'Bank')">Банк</button>
+		<button class="main__tabslinks" onclick="opentab(event, 'Set')">Наборы</button>
+		<button class="main__tabslinks" onclick="opentab(event, 'Specials')">Спецпредложения</button>
+		<button class="main__tabslinks" onclick="opentab(event, 'PromoCodes')">Промокоды</button>
+      </div>
+	  <div class="main__tab-content">
+		  <div class="main__content">
+			  <h3>1</h3>
+		  </div>
+		  <div class="main__content">
+			  <h3>2</h3>
+		  </div>
+		  <div class="main__content">
+			  <h3>3</h3>
+		  </div>
+		  <div class="main__content">
+			  <h3>4</h3>
+		  </div>
+		  <div class="main__content">
+			  <h3>5</h3>
+		  </div>
+	  </div>
+    </main>
+    <script src="/src/js/app.js"></script>
+  </body>
+</html>
