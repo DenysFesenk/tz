@@ -1,15 +1,25 @@
-opentab = (event, opentab) => {
-    const i
-    const tabcontent
-    const tablinks
-    tabcontent = document.getElementsByClassName("main__content");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("main__tabslinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(opentab).style.display = "block";
-    event.currentTarget.className += " active";
+const tab = function () {
+  let tabNav = document.querySelectorAll('.main__tabs-links'),
+    tabContent = document.querySelectorAll('.main__content'),
+    tabName;
+
+  tabNav.forEach(item => {
+    item.addEventListener('click', selectTabNav)
+  });
+
+  function selectTabNav() {
+    tabNav.forEach(item => {
+      item.classList.remove('active');
+    });
+    this.classList.add('active');
+    tabName = this.getAttribute('data-tab-name');
+    selectTabContent(tabName);
   }
+
+  function selectTabContent(tabName) {
+    tabContent.forEach(item => {
+      item.classList.contains(tabName) ? item.classList.add('active') : item.classList.remove('active');
+    })
+  }
+};
+tab();

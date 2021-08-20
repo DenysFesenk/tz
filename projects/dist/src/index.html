@@ -7,9 +7,12 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="assets/fav/favicon.ico"
+      href="assets/fav/crystals.png"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body>
     <header class="header">
@@ -47,31 +50,134 @@
       </div>
     </header>
     <main class="main">
-      <div class="main__tabs">
-        <button class="main__tabslinks" onclick="opentab(event, 'Monster')">Монстр Боксы</button>
-		<button class="main__tabslinks" onclick="opentab(event, 'Bank')">Банк</button>
-		<button class="main__tabslinks" onclick="opentab(event, 'Set')">Наборы</button>
-		<button class="main__tabslinks" onclick="opentab(event, 'Specials')">Спецпредложения</button>
-		<button class="main__tabslinks" onclick="opentab(event, 'PromoCodes')">Промокоды</button>
+      <ul class="main__tabs">
+        <li class="main__tabs-links active" data-tab-name="tab-1">
+          Монстр Боксы
+        </li>
+        <li class="main__tabs-links" data-tab-name="tab-2">
+          Банк
+        </li>
+        <li class="main__tabs-links" data-tab-name="tab-3">
+          Наборы
+        </li>
+        <li class="main__tabs-links" data-tab-name="tab-4">
+          Спецпредложения
+        </li>
+        <li class="main__tabs-links" data-tab-name="tab-5">
+          Промокоды
+        </li>
+      </ul>
+      <div class="main__tab-content">
+        <div class="main__content tab-1">
+          <h3>Монстр Боксы</h3>
+        </div>
+        <div class="main__content tab-2 active">
+          <h3 class="main__content-title">Кристаллы Незера</h3>
+          <ul class="main__cards-bank">
+            <li class="main__card-cr card">
+              <img src="./img/one-crystal-2.png" class="card__img" alt="">
+              <span class="card__amount">x100</span>
+              <span class="card__name">Handful of Coins</span>
+              <a href="" class="card__link">
+                <span class="card__link-pay">Купить</span>
+                <span class="card__link-value">$</span>
+                <span class="card__link-price">10</span>
+              </a>
+            </li>
+            <li class="main__card-cr card">
+              <img src="./img/one-crystal-2.png" class="card__img" alt="">
+              <span class="card__amount">x100</span>
+              <span class="card__name">Handful of Coins</span>
+              <a href="" class="card__link">
+                <span class="card__link-pay">Купить</span>
+                <span class="card__link-value">$</span>
+                <span class="card__link-price">10</span>
+              </a>
+            </li>
+            <li class="main__card-cr card">
+              <img src="./img/one-crystal-2.png" class="card__img" alt="">
+              <span class="card__amount">x100</span>
+              <span class="card__name">Handful of Coins</span>
+              <a href="" class="card__link">
+                <span class="card__link-pay">Купить</span>
+                <span class="card__link-value">$</span>
+                <span class="card__link-price">10</span>
+              </a>
+            </li>
+            <li class="main__card-cr card">
+              <img src="./img/one-crystal-2.png" class="card__img" alt="">
+              <span class="card__amount">x500</span>
+              <span class="card__name">Handful of Coins</span>
+              <a href="" class="card__link">
+                <span class="card__link-pay">Купить</span>
+                <span class="card__link-value">$</span>
+                <span class="card__link-price">10</span>
+              </a>
+            </li>
+            <li class="main__card-cr card">
+              <img src="./img/one-crystal-2.png" class="card__img" alt="">
+              <span class="card__amount">x500</span>
+              <span class="card__name">Handful of Coins</span>
+              <a href="" class="card__link">
+                <span class="card__link-pay">Купить</span>
+                <span class="card__link-value">$</span>
+                <span class="card__link-price">10</span>
+              </a>
+            </li>
+            <li class="main__card-cr card">
+              <img src="./img/one-crystal-2.png" class="card__img" alt="">
+              <span class="card__amount">x500</span>
+              <span class="card__name">Handful of Coins</span>
+              <a href="" class="card__link">
+                <span class="card__link-pay">Купить</span>
+                <span class="card__link-value">$</span>
+                <span class="card__link-price">10</span>
+              </a>
+            </li>
+            <li class="main__card-cr card">
+              <img src="./img/one-crystal-2.png" class="card__img" alt="">
+              <span class="card__amount">x1000</span>
+              <span class="card__name">Handful of Coins</span>
+              <a href="" class="card__link">
+                <span class="card__link-pay">Купить</span>
+                <span class="card__link-value">$</span>
+                <span class="card__link-price">10</span>
+              </a>
+            </li>
+            <li class="main__card-cr card">
+              <img src="./img/one-crystal-2.png" class="card__img" alt="">
+              <span class="card__amount">x1500</span>
+              <span class="card__name">Handful of Coins</span>
+              <a href="" class="card__link">
+                <span class="card__link-pay">Купить</span>
+                <span class="card__link-value">$</span>
+                <span class="card__link-price">10</span>
+              </a>
+            </li>
+            <li class="main__card-cr card">
+              <img src="./img/one-crystal-2.png" class="card__img" alt="">
+              <span class="card__amount">x100</span>
+              <span class="card__name">Handful of Coins</span>
+              <a href="" class="card__link">
+                <span class="card__link-pay">Купить</span>
+                <span class="card__link-value">$</span>
+                <span class="card__link-price">10</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="main__content tab-3">
+          <h3>Наборы</h3>
+        </div>
+        <div class="main__content tab-4">
+          <h3>Спецпредложения</h3>
+        </div>
+        <div class="main__content tab-5">
+          <h3>Промокоды</h3>
+        </div>
       </div>
-	  <div class="main__tab-content">
-		  <div class="main__content">
-			  <h3>1</h3>
-		  </div>
-		  <div class="main__content">
-			  <h3>2</h3>
-		  </div>
-		  <div class="main__content">
-			  <h3>3</h3>
-		  </div>
-		  <div class="main__content">
-			  <h3>4</h3>
-		  </div>
-		  <div class="main__content">
-			  <h3>5</h3>
-		  </div>
-	  </div>
     </main>
-    <script src="/src/js/app.js"></script>
+    
+    <script src="js/bundle.js"></script>
   </body>
 </html>

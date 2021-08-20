@@ -16,11 +16,11 @@ html, body{
 
 body{
     font-family: "LeksaSans", sans-serif;
-    overflow: hidden;
+    overflow: auto;
     background: #623b3b url(../img/background-2.png) ;
     background-repeat: no-repeat;
     background-size: cover;
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 380px) {
         background-position: 40%;
       }
 }

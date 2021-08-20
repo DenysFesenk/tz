@@ -3,7 +3,8 @@ $style: "header";
   @include flex(space-between, center);
   padding: 10px 25px;
   background: rgba(13, 11, 15, 0.5);
-  @media screen and (max-width: 360px) {
+  margin-bottom: 10px;
+  @media screen and (max-width: 380px) {
     padding: 10px 5px;
   }
   &__btn {
@@ -11,7 +12,7 @@ $style: "header";
       text-transform: uppercase;
     }
     border: 2px solid $white-transparent;
-    border-radius: 30px;
+    border-radius: 50px;
     padding: 15px 25px 16px 30px;
     @include flex(center, center);
     transition: all;
@@ -22,16 +23,16 @@ $style: "header";
     }
     &:hover {
       border: 2px solid $white;
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 380px) {
         border: none;
       }
     }
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 380px) {
       padding: 0;
       border: none;
     }
     span {
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 380px) {
         display: none;
       }
     }
@@ -42,7 +43,7 @@ $style: "header";
   &__wallet-item {
     @include flex(center, center);
     margin-right: 48px;
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 380px) {
         margin-right: 0;
         padding: 0;
       }
@@ -55,31 +56,31 @@ $style: "header";
     margin-right: 11px;
     @include size(69px);
     // cursor: pointer;
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 380px) {
       @include size(30px);
     }
   }
   &__amount {
     @include flex(center, left, column);
     margin-right: 18px;
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 380px) {
       margin-right: 0;
     }
     .amount {
       @include text($H80, bold, $white);
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 380px) {
         font-size: $H30;
       }
     }
     .value {
       @include text($H0, 400, $pink-value);
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 380px) {
         display: none;
       }
     }
   }
   .img-plus{
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 380px) {
       @include size(40px);
     }
   }

@@ -4,6 +4,14 @@ $white-transparent: rgba(255, 255, 255, .1);
 $black: #000000;
 $bgrd-wallet: #0D0B0F;
 $pink-value: #B9B7EA;
+$text-color-da: #9794C6;
+$tabs: #212031;
+$bgrd-content: #242333;
+$active-tabs: #323145;
+$border-tab-active: #F52CBF;
+$border-btn-pay: #682FBD;
+$green-pay: #21CC14;
+
 
 //font-sizes
 @function px_to_rem($target, $context: $base-size) {
