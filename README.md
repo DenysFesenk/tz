@@ -1,16 +1,5 @@
 # Gulp-assembler
 ```
-My project
-```
-https://denysfesenk.github.io/beetrootFrontEndCobra/projects/design-lab/app/
-```
-```
-https://denysfesenk.github.io/beetrootFrontEndCobra/projects/exam/app/
-```
-```
-https://denysfesenk.github.io/beetrootFrontEndCobra/projects/cahee/app/
-
-
 * Install `gulp-cli`:
 ```
 npm install gulp-cli -g
