@@ -2,102 +2,259 @@ $style: "main";
 .#{$style} {
   max-width: 980px;
   margin: 0 auto 80px;
+  @media screen and (max-width: 980px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
   &__tabs {
     overflow: hidden;
+    @media screen and (max-width: 380px) {
+      width: 100%;
+    }
   }
-  &__tabs-links{
-    flex: 0 1 20%;
+  &__tabs-links {
+    flex: 1 1 20%;
     display: flex;
     width: 188px;
     height: 54px;
     @include flex(center, center);
-    @include text($H200, bold, $text-color-da);
+    @include text($H200, bold, $text-color-da){
+      text-align: center;
+    };
     border-radius: 10px 10px 0 0;
     background: $tabs;
     float: left;
     outline: none;
     cursor: pointer;
     transition: 0.3s;
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-right: 10px;
+      @media screen and (max-width: 380px) {
+        margin-right: 0;
+      }
     }
     &:not(.active):hover {
       background: $active-tabs;
+    }
+    @media screen and (max-width: 980px) {
+      @include text($H40, bold, $text-color-da);
+      width: 132px;
+      background-color: $tabs-small;
+    }
+    @media screen and (max-width: 700px) {
+      width: 112px;
+      background-color: $tabs-small;
+    }
+    @media screen and (max-width: 380px) {
+      border-radius: 0;
+      @include text($H40, bold, $text-color-da);
+      width: 20%;
+      word-wrap: break-word;
+      background-color: $tabs-small;
+      // margin-bottom: 11px;
     }
   }
   &__tabs .active {
     background: $active-tabs;
     border-bottom: 2px solid $border-tab-active;
     color: $white;
+    @media screen and (max-width: 380px) {
+      background: linear-gradient(0deg, rgba(245,44,191, .2) 0%, rgba(245,44,191,0) 100%);
+    }
   }
-  &__content.active{
+  &__content.active {
     display: block;
   }
   &__content {
     display: none;
-    // padding: 6px 12px;
     border-top: none;
     background: $bgrd-content;
     border-radius: 0 0 10px 10px;
+    @media screen and (max-width: 980px) {
+      @include text($H40, bold, $text-color-da);
+      width: 700px;
+      max-width: 700px;
+      background-color: $tabs-small;
+    }
+    @media screen and (max-width: 700px) {
+      @include text($H40, bold, $text-color-da);
+      width: 600px;
+      max-width: 600px;
+      background-color: $tabs-small;
+    }
+    @media screen and (max-width: 380px) {
+      border-radius: 10px;
+      width: 90%;
+      margin: 0 auto;
+    }
   }
-  &__content-title{
+  &__content-title {
     padding: 24px 0;
     text-align: center;
     @include text($H300, bold, $white);
   }
-  &__cards-bank{
+  &__cards {
     display: grid;
+    overflow: hidden;
     grid-template-columns: repeat(4, 1fr);
-    // grid-auto-rows: 200px;
     padding: 0 26px;
+    @media screen and (max-width: 980px) {
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 700px) {
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 380px) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0;
+    }
   }
-  &__card-cr{
+  &__card-cr {
     @include flex(start, center, column);
     background-image: url(../img/bgr-card1.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     // max-width: 217px;
     margin-bottom: 20px;
     margin-right: 20px;
     min-width: 217px;
-    &:nth-child(4n){
+    @media screen and (max-width: 980px) {
       margin-right: 0;
-    };
+    }
+    @media screen and (max-width: 380px) {
+      transform: scale(.7);
+    }
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
     padding: 21px 0 10px 0;
   }
-  .card{
-    &__img{
-      max-width: 151px;
+  .card {
+    position: relative;
+    overflow: hidden;
+    &__img {
       margin-bottom: 27px;
+      width: 120px;
     }
-    &__amount{
+    &__img-box{
+      margin-bottom: 8px;
+    }
+    &__img-first {
+      padding: 16px 0;
+      width: auto;
+      // height: 120px;
+    }
+    &__amount {
       @include text($H350, $white);
     }
-    &__name{
+    &__amount-box{
+      @include text($H260, $white);
+    }
+    &__name {
       @include text($H20, $white);
       margin-bottom: 25px;
     }
-    &__link{
+    &__name-box{
+      @include text($H40, $white);
+      margin-bottom: 6px;
+    }
+    &__old-price{
+      @include flex(center, center);
+      margin-bottom: 11px;
+      img{
+        margin-right: 3px;
+      }
+    }
+    &__text{
+      @include text($H30, normal, $text-color-da);
+      margin-right: 5px;
+    }
+    &__text-price{
+      @include text($H30, normal, $text-color-da){
+        text-decoration: line-through;
+      };
+    }
+    &__link {
+      @include flex(center, center);
       border: 2px solid $border-btn-pay;
-      padding: 15px 30px 17px;
+      padding: 15px 30px;
       border-radius: 50px;
-      background: rgb(36,35,51);
-      background: linear-gradient(90deg, rgba(36,35,51,1) 0%, rgba(60,59,83,1) 100%);
+      background: rgb(36, 35, 51);
+      background: linear-gradient(
+        90deg,
+        rgba(36, 35, 51, 1) 0%,
+        rgba(60, 59, 83, 1) 100%
+      );
       @include transition(box-shadow);
-      &:hover{
+      &:hover {
         box-shadow: 21px -17px 29px 24px rgba(60, 59, 83, 0.63) inset;
       }
     }
-    &__link-pay{
+    &__link-boxs {
+      background: rgb(104, 47, 189);
+      background: linear-gradient(
+        98deg,
+        rgba(104, 47, 189, 1) 0%,
+        rgba(203, 76, 188, 1) 100%
+      );
+      img{
+        margin-right: 3px;
+      }
+    }
+    &__link-pay {
       @include text($H40, bold, $white);
       margin-right: 20px;
     }
-    &__link-value{
+    &__link-value {
       @include text($H50, bold, $green-pay);
       margin-right: 4px;
     }
-    &__link-price{
+    &__link-price {
       @include text($H40, $white);
+    }
+    &__discount{
+      position: absolute;
+      overflow: hidden;
+      left: -24px;
+      top: 20px;
+      border: 2px solid #FF4910;
+      width: 110px;
+      height: 22px;
+      @include flex(center, center);
+      background: linear-gradient(98deg, rgba(220,43,25,1) 0%, rgba(255,73,16,1) 100%);
+      transform: rotate(-45deg);
+      @include text($H30, bold, $white){
+        font-family: 'Roboto';
+      };
+      &:before{
+        position: absolute;
+        content: '';
+        width: 31px;
+        height: 21px;
+        top: -9px;
+        left: -14px;
+        background-color: $bgrd-content;
+        border-bottom: solid #FF4910 2px;
+        transform: rotate(-45deg);
+      }
+      img{
+        transform: rotate(45deg);
+        margin-right: -2px;
+      }
+    }
+  }
+  .big-screen{
+    @media screen and (max-width: 380px) {
+      display: none;
+    }
+  }
+  .small-screen{
+    display: none;
+    @media screen and (max-width: 380px) {
+      display: block;
     }
   }
 }

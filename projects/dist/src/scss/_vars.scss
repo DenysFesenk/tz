@@ -1,3 +1,6 @@
+//font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 //colors
 $white: #ffffff;
 $white-transparent: rgba(255, 255, 255, .1);
@@ -6,6 +9,7 @@ $bgrd-wallet: #0D0B0F;
 $pink-value: #B9B7EA;
 $text-color-da: #9794C6;
 $tabs: #212031;
+$tabs-small: #181723;
 $bgrd-content: #242333;
 $active-tabs: #323145;
 $border-tab-active: #F52CBF;
@@ -33,6 +37,7 @@ $green-pay: #21CC14;
   $H300: px_to_rem(30px);
   $H280: px_to_rem(28px);
   $H260: px_to_rem(26px);
+  $H250: px_to_rem(25px);
   $H240: px_to_rem(24px);
   $H220: px_to_rem(22px);
   $H210: px_to_rem(21px);

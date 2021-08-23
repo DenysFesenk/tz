@@ -6,6 +6,7 @@ $style: "header";
   margin-bottom: 10px;
   @media screen and (max-width: 380px) {
     padding: 10px 5px;
+    margin: 0;
   }
   &__btn {
     @include text($H80, 400, $white) {
@@ -15,7 +16,7 @@ $style: "header";
     border-radius: 50px;
     padding: 15px 25px 16px 30px;
     @include flex(center, center);
-    transition: all;
+    @include transition;
     .img-btn {
       width: 31px;
       height: 31px;
@@ -23,15 +24,25 @@ $style: "header";
     }
     &:hover {
       border: 2px solid $white;
+      @media screen and (max-width: 730px) {
+        display: none;
+      }
       @media screen and (max-width: 380px) {
         border: none;
       }
+    }
+    @media screen and (max-width: 730px) {
+      padding: 0;
+      border: none;
     }
     @media screen and (max-width: 380px) {
       padding: 0;
       border: none;
     }
     span {
+      @media screen and (max-width: 730px) {
+        display: none;
+      }
       @media screen and (max-width: 380px) {
         display: none;
       }
@@ -43,6 +54,10 @@ $style: "header";
   &__wallet-item {
     @include flex(center, center);
     margin-right: 48px;
+    @media screen and (max-width: 980px) {
+      margin-right: 8px;
+      padding: 0;
+    }
     @media screen and (max-width: 380px) {
         margin-right: 0;
         padding: 0;
@@ -74,6 +89,9 @@ $style: "header";
     }
     .value {
       @include text($H0, 400, $pink-value);
+      @media screen and (max-width: 730px) {
+        display: none;
+      }
       @media screen and (max-width: 380px) {
         display: none;
       }
