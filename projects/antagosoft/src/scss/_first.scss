@@ -1,0 +1,41 @@
+$style: "first";
+.#{$style} {
+    @include flex(center, center);
+    margin: 40px 0 160px;
+    &__content{
+        margin-right: 45px;
+        max-width: 490px;
+    }
+    &__title{
+        @include text($H380, 600, $blue-text){
+            line-height: 53px;
+        };
+        margin-bottom: 40px;
+        max-width: 390px;
+    }
+    &__text{
+        @include text($H380, 700, $dark-blue-text){
+            line-height: 36px;
+        };
+        margin-bottom: 55px;
+    }
+    &__link{
+        padding: 22px 54px;
+        background-color: $blue;
+        position: relative;
+        @include text($H60, 500, $white){
+            line-height: 16px;
+        };
+        box-shadow: -15px -15px 0px 0px rgba(240, 244, 246, 1);
+    }
+    &__re-think{
+        @include text($H1380, 700, $big-text){
+            line-height: 58px;
+        };
+        opacity: .3;
+        position: absolute;
+        width: 500px;
+        top: -27px;
+        left: -79px;
+    }
+}

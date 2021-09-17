@@ -1,0 +1,59 @@
+$style: "third";
+.#{$style} {
+  @include flex(center, center, column);
+  max-width: 1130px;
+  margin: 0 auto 90px;
+  &__title {
+    @include text($H380, 700, $dark-blue-text) {
+      line-height: 54px;
+    }
+    span {
+      color: $blue-text-title;
+    }
+    margin-bottom: 15px;
+  }
+  &__subtitle {
+    max-width: 512px;
+    margin-bottom: 60px;
+    @include text($H60, 300, $dark-blue-text) {
+      line-height: 28px;
+      text-align: center;
+    }
+  }
+  &__list {
+    @include flex(center);
+    flex-wrap: wrap;
+  }
+  &__item {
+    max-width: 340px;
+    padding: 40px;
+    border: 1px solid rgba(28, 83, 104, 0.2);
+    border-radius: 4px;
+    margin: 0 30px 30px 0;
+    &:nth-child(3n+3){
+        margin-right: 0;
+    }
+  }
+  &__item-img {
+    margin-bottom: 31px;
+  }
+  &__item-title {
+    @include text($H200, 600, $dark-blue-text) {
+      line-height: 30px;
+    }
+    margin-bottom: 15px;
+    max-width: 260px;
+  }
+  &__item-text {
+    @include text($H50, 300, $dark-blue-text) {
+      line-height: 22.5px;
+    }
+    max-width: 260px;
+    margin-bottom: 35px;
+  }
+  &__item-link {
+    @include text($H60, 600, $blue-link) {
+      line-height: 16px;
+    }
+  }
+}
