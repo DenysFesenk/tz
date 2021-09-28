@@ -1,0 +1,92 @@
+$style:'fifth';
+.#{$style} {
+    @include flex(center, center, column);
+    max-width: 1130px;
+    margin: 0 auto 90px;
+    &__title{
+       @include text($H380, 700, $dark-blue-text){
+           line-height: 54px;
+       } 
+       margin-bottom: 5px;
+       span{
+           color: $blue-text-title;
+       }
+    }
+    &__subtitle{
+        max-width: 512px;
+        @include text($H60, 300, $dark-blue-text){
+            text-align: center;
+            line-height: 28px;
+        }
+        margin-bottom: 50px;
+    }
+    &__list{
+        @include flex(center, center);
+        flex-wrap: wrap;
+    }
+    &__item{
+        background-color: $bgrd-card;
+        border: 1px solid rgba(28, 83, 104, .5);
+        border-radius: 4px;
+        width: 550px;
+        height: 220px;
+        padding: 45px 0 0 60px;
+        position: relative;
+        margin: 0 30px 30px 0;
+        &:nth-child(2n+2){
+            margin-right: 0;
+        }
+    }
+    &__item-title{
+        @include text($H220, 600, $white){
+            line-height: 30px;
+        }
+        margin-bottom: 10px;
+    }
+    &__item-text{
+        @include text($H60, 300, #D7D7D7){
+            line-height: 26px;
+        }
+        max-width: 390px;
+    }
+    &__item-numb{
+        position: absolute;
+        @include text($H1160, 200, $white){
+            line-height: 174px;
+        }
+        opacity: .05;
+        top: 113px;
+        right: 41px;
+    }
+    &__last-item{
+        padding: 55px 0 0 60px;
+        border: 1px solid #1C5368;
+        border-radius: 4px;
+        width: 550px;
+        height: 210px;
+        position: relative;
+        top: -10px;
+    }
+    &__last-title{
+        position: absolute;
+        background-color: $white;
+        padding: 0 19px;
+        top: -12px;
+        left: 40px;
+        @include text($H240, 600, $dark-blue-text){
+            line-height: 26px;
+        }
+    }
+    &__last-text{
+        max-width: 440px;
+        @include text($H60, 400, $dark-blue-text){
+            line-height: 26px;
+        }
+        margin-bottom: 30px;
+    }  
+    &__link{
+        @include text($H60, 600, $blue-link){
+            line-height: 16px;
+        }
+    }
+}
