@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "LeksaSans";
+    src: '../assets/fonts/LeksaSans.otf';
+}
+
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    min-height: 100vh;
+    font-size: 100%;
+} 
+
+body{
+    font-family: "LeksaSans", sans-serif;
+    overflow: auto;
+    background: #623b3b url(../img/background-2.png) center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    @media screen and (max-width: 380px) {
+        background-position: 40%;
+      }
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}

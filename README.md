@@ -1,5 +1,4 @@
 # Gulp-assembler
-```
 * Install `gulp-cli`:
 ```
 npm install gulp-cli -g
