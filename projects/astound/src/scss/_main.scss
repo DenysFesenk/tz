@@ -1,150 +1,305 @@
 $style: "main";
-.#{$style}{
-    &__card{
-        @include flex(center, flex-start);
+.#{$style} {
+  &__card {
+    @include flex(center, flex-start);
+    margin-bottom: 57px;
+    @media screen and (max-width: 767px) {
+        margin-bottom: 60px;
+      }
+    @media screen and (max-width: 479px) {
+      @include flex(flex-start, center, column);
+      margin-bottom: 44px;
     }
-    &__card-image{
-        margin-right: 58px;
+  }
+  &__title {
+    display: none;
+    @include text($H240, bold, $dark) {
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
     }
-    &__title{
-        @include text($H240, bold, $dark){
-            font-family: 'Oswald', sans-serif;
-            letter-spacing: 1.2px;
-        };
-        margin-bottom: 19px;
+    @media screen and (max-width: 767px) {
+      display: block;
+      margin-bottom: 28px;
     }
-    &__id{
-        @include text($H0, normal, $black){
-            opacity: .7;
-            letter-spacing: 0.5px;
-        };
-        margin-bottom: 25px;
+    @media screen and (max-width: 479px) {
+      margin-bottom: 31px;
+      width: 280px;
     }
-    &__price{
-        margin-bottom: 25px;
-        @include text($H240, bold);
+  }
+  &__card-image {
+    margin-right: 58px;
+    @media screen and (max-width: 767px) {
+      margin-right: 20px;
     }
-    &__old-price{
-        color: $black;
-        margin-right: 20px;
-        text-decoration: line-through;
+    position: relative;
+    @media screen and (max-width: 479px) {
+      margin-right: 0;
+      margin-bottom: 19px;
     }
-    &__new-price{
-        color: $lipstick;
+  }
+  &__social-list {
+    @include flex(center, center, column);
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 16px;
+    @media screen and (max-width: 767px) {
+      display: block;
     }
-    &__snape{
+    @media screen and (max-width: 479px) {
+      display: none;
+    }
+  }
+  &__social-item {
+    @include flex(center, center);
+    @include size(41px);
+    border: solid 2px #2c87ce;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__content {
+    @media screen and (max-width: 767px) {
+      padding-top: 60px;
+    }
+    @media screen and (max-width: 479px) {
+      padding: 0;
+    }
+  }
+  &__card-title {
+    @include text($H240, bold, $dark) {
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 1.2px;
+    }
+    margin-bottom: 19px;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  &__id {
+    @include text($H0, normal, $black) {
+      opacity: 0.7;
+      letter-spacing: 0.5px;
+    }
+    margin-bottom: 25px;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 13px;
+    }
+    @media screen and (max-width: 479px) {
+        margin-bottom: 18px;
+      }
+  }
+  &__price {
+    margin-bottom: 25px;
+    @include text($H240, bold);
+    @media screen and (max-width: 767px) {
+      margin-bottom: 13px;
+      font-size: $H360;
+    }
+    @media screen and (max-width: 479px) {
+      margin-bottom: 13px;
+      font-size: $H360;
+    }
+  }
+  &__old-price {
+    color: $black;
+    margin-right: 20px;
+    text-decoration: line-through;
+  }
+  &__new-price {
+    color: $lipstick;
+  }
+  &__snape {
+    @include flex(flex-start, center);
+    margin-bottom: 30px;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 22px;
+    }
+    @media screen and (max-width: 479px) {
+        margin-bottom: 31px;
+      }
+  }
+  &__rating {
+    @include flex;
+    margin-right: 16px;
+  }
+  &__rating-item {
+    margin-right: 1px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__share-it {
+    @include text($H80, bold, $bluish) {
+      letter-spacing: 0.45px;
+    }
+    cursor: pointer;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  &__social-list-mob{
+      display: none;
+      @media screen and (max-width: 479px) {
         @include flex(flex-start, center);
-        margin-bottom: 30px;
+        margin-bottom: 33px;
+      }
+  }
+  &__social-item-mob{
+    @include flex(center, center);
+    @include size(41px);
+    border: solid 2px #2c87ce;
+    border-radius: 50%;
+    margin-right: 16px;
+    &:last-child {
+        margin-right: 0;
     }
-    &__rating{
-        @include flex;
-        margin-right: 16px;
+  }
+  &__subtitle {
+    @include text($H60, bold, $black) {
+      letter-spacing: 0.35px;
     }
-    &__rating-item{
-
-    }
-    &__share-it{
-        @include text($H80, bold, $bluish){
-            letter-spacing: .45px;
-        };
-        cursor: pointer;
-    }
-    &__subtitle{
-        @include text($H60, bold, $black){
-            letter-spacing: .35px;
-        };
-        margin-bottom: 14px;
-    }
-    &__text{
-        @include text($H20, 300, $black){
-            letter-spacing: .3px;
-        };
-        margin-bottom: 26px;
-    }
-    &__size-and-color{
-        margin-bottom: 21px;
-    }
-    &__size{
-        @include flex(flex-start, center);
-        margin-bottom: 12px;
-    }
-    &__size input[type=radio]:checked + div {
-        box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
-        @include transition;
-    }
-    &__size-title{
-        margin-right: 36px;
-    }
-    &__size-title, &__color-title{
-        @include text($H40, bold, $black){
-            letter-spacing: .7px;
-            text-transform: uppercase;
-        };
-    }
-    &__size-list, &__color-list{
-        @include flex(flex-start, center);
-    }
-    &__size-item{
-        margin-right: 13px;
-        &:last-child{
-            margin-right: 0;
-        }
-        div{
-            @include size(38px);
-            cursor: pointer;
-            border: 1px solid $grey;
-            border-radius: 50%;
-            position: relative;
-        }
-    }
-    &__size-span{
-        @include text($H60, bold, $black){
-            text-transform: uppercase;
-        }
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-    input{
+    margin-bottom: 14px;
+    @media screen and (max-width: 479px) {
         display: none;
+      }
+  }
+  &__text {
+    @include text($H20, 300, $black) {
+      letter-spacing: 0.3px;
     }
-    &__color{
-        @include flex(flex-start, center);
-        margin-bottom: 21px;
-        // input[type=radio]:checked + div {
-        //     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
-        //     @include transition;
-        // }
+    @media screen and (max-width: 767px) {
+      max-width: 284px;
+      margin-bottom: 19px;
     }
-
-    &__color input[type=radio]:checked + div {
-        box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
-        @include transition;
+    @media screen and (max-width: 479px) {
+      max-width: 321px;
+      margin-bottom: 30px;
+      font-size: $H40;
     }
-    &__color-title{
-        margin-right: 15px;
+    margin-bottom: 26px;
+  }
+  &__size {
+    @include flex(flex-start, center);
+    margin-bottom: 12px;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 13px;
     }
-    &__color-item{
-        margin-right: 7px;
-        &:last-child{
-            margin-right: 0;
-        }
+    @media screen and (max-width: 479px) {
+        @include flex(center, flex-start, column);
+      }
+  }
+  &__size input[type="radio"]:checked + div {
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
+    @include transition;
+  }
+  &__size-title {
+    margin-right: 36px;
+  }
+  &__size-title,
+  &__color-title {
+    @include text($H40, bold, $black) {
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
     }
-    &__color-div{
-        @include size(43px);
-        border-radius: 50%;
-    }
-    &__btn{
-        @include text($H40, bold, $black){
-            letter-spacing: .7px;
+    @media screen and (max-width: 479px) {
+        display: none;
+        margin-bottom: 15px;
+        @include text($H60, bold, $black) {
+            letter-spacing: 0.8px;
             text-transform: uppercase;
-        };
-        padding: 17px 57px 17px 56px;
-        background-color: $light-teal;
-        outline: none;
-        border: none;
-        border-radius: 29px;
-        cursor: pointer;
+          }
+      }
+  }
+  &__size-title--mob, &__color-title--mob{
+      display: none;
+    @media screen and (max-width: 479px) {
+        display: block;
+      }
+  }
+  &__size-list,
+  &__color-list {
+    @include flex(flex-start, center);
+  }
+  &__size-item {
+    margin-right: 13px;
+    &:last-child {
+      margin-right: 0;
     }
+    div {
+      @include size(38px);
+      cursor: pointer;
+      border: 1px solid $grey;
+      border-radius: 50%;
+      position: relative;
+    }
+  }
+  &__size-span {
+    @include text($H60, bold, $black) {
+      text-transform: uppercase;
+    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  input {
+    display: none;
+  }
+  &__color {
+    @include flex(flex-start, center);
+    margin-bottom: 21px;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 19px;
+    }
+    @media screen and (max-width: 479px) {
+        @include flex(center, flex-start, column);
+        margin-bottom: 40px;
+      }
+  }
+
+  &__color input[type="radio"]:checked + div {
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
+    @include transition;
+  }
+  &__color-title {
+    margin-right: 15px;
+  }
+  &__color-item {
+    margin-right: 7px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__color-div {
+    @include size(43px);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  &__btn {
+    @include text($H40, bold, $black) {
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+    padding: 17px 57px 17px 56px;
+    background-color: $light-teal;
+    outline: none;
+    border: none;
+    border-radius: 29px;
+    cursor: pointer;
+    @media screen and (max-width: 767px) {
+      padding: 15px 49px 16px 44px;
+      @include text($H80, bold, $black) {
+        letter-spacing: 0.9px;
+        text-transform: uppercase;
+      }
+    }
+    @media screen and (max-width: 479px) {
+        @include flex(center, center);
+        margin: 0 auto;
+      }
+  }
 }
