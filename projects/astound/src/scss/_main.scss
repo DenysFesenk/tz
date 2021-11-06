@@ -6,8 +6,10 @@ $style: "main";
     @media screen and (max-width: 767px) {
       margin-bottom: 60px;
     }
-    @media screen and (max-width: 479px) {
+    @media screen and (max-width: 576px) {
       @include flex(flex-start, center, column);
+    }
+    @media screen and (max-width: 479px) {
       margin-bottom: 44px;
     }
   }
@@ -37,6 +39,11 @@ $style: "main";
       margin-right: 0;
       margin-bottom: 19px;
     }
+    .image{
+      @media screen and (max-width: 700px) {
+        max-width: 335px;
+      }
+    }
   }
   &__social-list {
     @include flex(center, center, column);
@@ -46,6 +53,9 @@ $style: "main";
     left: 16px;
     @media screen and (max-width: 767px) {
       display: block;
+    }
+    @media screen and (max-width: 615px) {
+      top: 115px;
     }
     @media screen and (max-width: 479px) {
       display: none;
@@ -108,6 +118,9 @@ $style: "main";
     color: $black;
     margin-right: 20px;
     text-decoration: line-through;
+    @media screen and (max-width: 767px) {
+      margin-right: 7px;
+    }
   }
   &__new-price {
     color: $lipstick;
@@ -304,25 +317,45 @@ $style: "main";
     }
   }
   //album
+  
   &__album {
     @include flex(center, flex-start, column);
   }
   &__album-title {
     @include text($H220, bold, $dark) {
       letter-spacing: 1.65px;
-      text-align-last: left;
+      text-align: left;
     }
     margin-bottom: 20px;
+    @media screen and (max-width: 834px) {
+      margin: 0 auto;
+      margin-bottom: 35px;
+   }
   }
   &__album-list {
-      @include flex(column);
+      @include flex(center, column);
       flex-wrap:wrap;
+      @media screen and (max-width: 834px) {
+         max-width: 834px;
+      }
+      @media screen and (max-width: 479px) {
+        display: none;
+     }
   }
   &__album-item {
     margin-bottom: 26px;
     margin-right: 20px;
     &:nth-child(3n){
         margin-right: 0;
+
+    }
+    @media screen and (max-width: 834px) {
+      &:nth-child(3n){
+        margin-right: 20px;
+    }
+      &:nth-child(2n){
+        margin-right: 0;
+    }
     }
   }
   &__album-block {
@@ -340,6 +373,11 @@ $style: "main";
     padding: 4px 10px;
     @include text($H60, bold, $dark) {
       letter-spacing: 1.2px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      text-align: center;
+      top: 235px;
     }
   }
   &__album-price--new {
