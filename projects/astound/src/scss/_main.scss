@@ -39,7 +39,7 @@ $style: "main";
       margin-right: 0;
       margin-bottom: 19px;
     }
-    .image{
+    .image {
       @media screen and (max-width: 700px) {
         max-width: 335px;
       }
@@ -317,7 +317,7 @@ $style: "main";
     }
   }
   //album
-  
+
   &__album {
     @include flex(center, flex-start, column);
   }
@@ -330,33 +330,52 @@ $style: "main";
     @media screen and (max-width: 834px) {
       margin: 0 auto;
       margin-bottom: 35px;
-   }
+    }
   }
   &__album-list {
-      @include flex(center, column);
-      flex-wrap:wrap;
-      @media screen and (max-width: 834px) {
-         max-width: 834px;
-      }
-      @media screen and (max-width: 479px) {
-        display: none;
-     }
+    @include flex(center, column);
+    flex-wrap: wrap;
+    @media screen and (max-width: 834px) {
+      max-width: 834px;
+    }
+    @media screen and (max-width: 479px) {
+      display: none;
+    }
+  }
+  &__album-list-mob {
+    @media screen and (min-width: 480px) {
+      display: none;
+    }
+    @media screen and (max-width: 479px) {
+      display: flex;
+    }
+    position: relative;
+    margin: auto;
   }
   &__album-item {
     margin-bottom: 26px;
     margin-right: 20px;
-    &:nth-child(3n){
-        margin-right: 0;
-
+    &:nth-child(3n) {
+      margin-right: 0;
     }
     @media screen and (max-width: 834px) {
-      &:nth-child(3n){
+      &:nth-child(3n) {
         margin-right: 20px;
-    }
-      &:nth-child(2n){
+      }
+      &:nth-child(2n) {
         margin-right: 0;
+      }
     }
+    @media screen and (max-width: 550px) {
+      margin-right: 0;
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
     }
+  }
+  &__album-item-mob{
+    display: none;
+    margin: 0 auto;
   }
   &__album-block {
     position: relative;
@@ -386,12 +405,58 @@ $style: "main";
   &__album-price-old {
     text-decoration: line-through;
     color: $dark;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
   }
   &__album-item-title {
-      @include text($H40, bold, $black){
-          letter-spacing: .7px;
-          text-align: center;
-          text-transform: uppercase;
-      }
+    @include text($H40, bold, $black) {
+      letter-spacing: 0.7px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  .prev{
+    left: 0;
+  }
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
   }
 }
