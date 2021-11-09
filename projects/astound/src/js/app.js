@@ -1,28 +1,37 @@
-let slideIndex = 1;
-showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-// Next/previous controls
-// const next = document.getElementsByClassName("next");
-// // next.onclick = function plusSlides(n) {
-// //   showSlides(slideIndex += n);
-// //   console.log('say hi')
-// // }
-// next.addEventListener('click', () => {
-//   console.log('say hi')
-// })
+const carouselSlide = document.querySelector('.main__album-list-mob'),
+      carouserItem = document.querySelectorAll('.main__album-item-mob');
 
-document.getElementsByClassName("next").onclick = plusSlides;
+const prevBtn = document.querySelector('#prevBtn'),
+      nextBtn = document.querySelector('#nextBtn');
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("main__album-item-mob");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+let counter = 1;
+const size = carouserItem[0].clientWidth;
+
+// carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+prevBtn.addEventListener('click', ()=> {
+  if(counter <= 0)
+  carouselSlide.style.transition = "transform 0.4s ease-in-out";
+  counter--;
+  carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)'
+})
+
+nextBtn.addEventListener('click', ()=> {
+  carouselSlide.style.transition = "transform 0.4s ease-in-out";
+  counter++;
+  carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+  if(carouserItem[counter].id === carouserItem.length){
+    carouselSlide.style.transform = "none";
+    // counter = carouserItem.length - 2;
+    // carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)' 
   }
-  slides[slideIndex-1].style.display = "flex";
-}
+})
+
+carouselSlide.addEventListener('transitionend', () =>{
+  if(carouserItem[counter].id === carouserItem.length){
+    carouselSlide.style.transition = "none";
+    // counter = carouserItem.length - 2;
+    // carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)' 
+  }
+})
